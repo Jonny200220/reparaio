@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#E9E5DC;font-family:'Bricolage Grotesque',system-ui,sans-serif;color:#15171C}a{color:#FF5B23;text-decoration:none}a:hover{color:#D9420F}.dv-turn{padding:48px 52px 40px;scroll-margin-top:16px}.dv-thd{display:flex;align-items:baseline;gap:10px;margin:0 0 8px}.dv-tid{font:600 10px ui-monospace,Menlo,monospace;padding:3px 7px;background:#15171C;color:#fff;border-radius:4px}.dv-tname{font:600 13px/1.2 system-ui,sans-serif;color:#15171C}.dv-opts{display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start}.dv-opt{flex:none;display:flex;flex-direction:column;gap:12px;scroll-margin-top:16px}.dv-oid{font:600 10.5px ui-monospace,Menlo,monospace;padding:3px 7px;background:rgba(0,0,0,.08);color:#15171C;border-radius:5px}.dv-olabel{display:flex;align-items:baseline;gap:8px;font:400 12px/1.3 system-ui,sans-serif;color:rgba(0,0,0,.6)}.dv-opt:target .dv-oid{background:#FF5B23;color:#fff}.dv-next{margin:28px 0 0;font:12px/1.5 system-ui,sans-serif;color:rgba(0,0,0,.5)}</style>
+</helmet>
+<section class="dv-turn" id="t1">
+<div class="dv-thd"><a class="dv-tid" href="#t1">1</a><span class="dv-tname">Arreglo — flujo completo: pedir, ofertar, aceptar, rastrear, pagar</span></div>
+<p style="margin:0 0 32px;max-width:720px;font:400 14px/1.5 system-ui,sans-serif;color:rgba(0,0,0,.6);text-wrap:pretty">Supuestos: México (MXN), dos categorías (hidráulica y eléctrica), subasta inversa donde la app sugiere una cuota mínima según servicios similares y el cliente sube o baja su oferta. Los contratistas aceptan o contraofertan durante una ventana de 5 min. La pantalla <a class="dv-oid" href="#1c">1c</a> es interactiva (usa − / +).</p>
+<div class="dv-opts">
+
+<div class="dv-opt" id="1a"><div class="dv-olabel"><a class="dv-oid" href="#1a">1a</a>Inicio — elegir categoría</div>
+<div style="width:390px;height:844px;border-radius:56px;background:#15171C;padding:10px;box-sizing:border-box;box-shadow:0 30px 60px -20px rgba(21,23,28,.35)">
+<div style="width:100%;height:100%;border-radius:46px;background:#FAF8F4;overflow:hidden;position:relative;display:flex;flex-direction:column">
+<div style="height:54px;flex:none;display:flex;justify-content:space-between;align-items:center;padding:4px 30px 0;font:600 15px system-ui,sans-serif"><span>9:41</span><div style="position:absolute;left:50%;top:11px;transform:translateX(-50%);width:118px;height:34px;border-radius:20px;background:#15171C"></div><span style="display:flex;gap:5px;align-items:center"><span style="width:17px;height:10px;border-radius:2px;background:#15171C"></span><span style="width:24px;height:11px;border-radius:3px;border:1.5px solid #15171C;box-sizing:border-box;padding:1px"><span style="display:block;width:70%;height:100%;background:#15171C;border-radius:1px"></span></span></span></div>
+<div style="padding:12px 22px 0;display:flex;justify-content:space-between;align-items:center">
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font:500 12px 'JetBrains Mono',monospace;color:#8A867E;letter-spacing:.04em">ENTREGAR EN</span><span style="font-weight:600;font-size:16px;display:flex;align-items:center;gap:6px">Av. Insurgentes Sur 1458 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#15171C" stroke-width="1.8"><path d="M3 4.5l3 3 3-3"></path></svg></span></div>
+<div style="width:42px;height:42px;border-radius:50%;background:#15171C;color:#FAF8F4;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px">MR</div>
+</div>
+<div style="padding:30px 22px 0"><h1 style="margin:0;font-size:40px;line-height:.98;font-weight:800;letter-spacing:-.035em;text-wrap:balance">¿Qué hay que arreglar, Mariana?</h1></div>
+<div style="padding:26px 22px 0;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+<div style="height:212px;border-radius:28px;background:#2F6BFF;color:#fff;padding:18px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden">
+<div style="position:absolute;right:-30px;bottom:-40px;width:150px;height:150px;border-radius:50%;background:rgba(255,255,255,.12)"></div>
+<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3c3.5 4.2 6 7.6 6 10.8A6 6 0 0 1 6 13.8C6 10.6 8.5 7.2 12 3z"></path></svg>
+<div><div style="font-size:24px;font-weight:700;letter-spacing:-.02em">Hidráulica</div><div style="font-size:13px;opacity:.85;margin-top:4px">Fugas, tuberías, WC, calentador</div></div>
+</div>
+<div style="height:212px;border-radius:28px;background:#F5B700;color:#15171C;padding:18px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden">
+<div style="position:absolute;right:-30px;bottom:-40px;width:150px;height:150px;border-radius:50%;background:rgba(255,255,255,.25)"></div>
+<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#15171C" stroke-width="1.8" stroke-linejoin="round"><path d="M13 2L5 13.5h6L10 22l8-11.5h-6L13 2z"></path></svg>
+<div><div style="font-size:24px;font-weight:700;letter-spacing:-.02em">Eléctrica</div><div style="font-size:13px;opacity:.75;margin-top:4px">Cortos, contactos, lámparas, centro de carga</div></div>
+</div>
+</div>
+<div style="margin:12px 22px 0;padding:16px 18px;border-radius:22px;background:#15171C;color:#FAF8F4;display:flex;align-items:center;justify-content:space-between">
+<div style="display:flex;flex-direction:column;gap:3px"><span style="font-weight:600;font-size:15px">¿Urgencia? Pide en 3 toques</span><span style="font-size:13px;color:#A9A59C">Contratistas a menos de 4 km ahora: 23</span></div>
+<span style="width:36px;height:36px;border-radius:50%;background:#FF5B23;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"></path></svg></span>
+</div>
+<div style="padding:28px 22px 0;display:flex;justify-content:space-between;align-items:baseline"><span style="font-weight:700;font-size:17px">Servicios recientes</span><span style="font-size:13px;color:#8A867E">Ver todo</span></div>
+<div style="padding:10px 22px 0;display:flex;flex-direction:column">
+<div style="display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid #E7E2D8"><span style="width:38px;height:38px;border-radius:12px;background:#E3EAFF;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2F6BFF" stroke-width="2"><path d="M12 3c3.5 4.2 6 7.6 6 10.8A6 6 0 0 1 6 13.8C6 10.6 8.5 7.2 12 3z"></path></svg></span><div style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-weight:600;font-size:15px">Fuga en lavabo</span><span style="font-size:12px;color:#8A867E">12 sep · Jorge L.</span></div><span style="font:700 14px 'JetBrains Mono',monospace">$420</span></div>
+<div style="display:flex;align-items:center;gap:12px;padding:12px 0"><span style="width:38px;height:38px;border-radius:12px;background:#FFF1C2;display:flex;align-items:center;justify-content:center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A67C00" stroke-width="2"><path d="M13 2L5 13.5h6L10 22l8-11.5h-6L13 2z"></path></svg></span><div style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-weight:600;font-size:15px">Cambio de contactos</span><span style="font-size:12px;color:#8A867E">28 ago · Ana P.</span></div><span style="font:700 14px 'JetBrains Mono',monospace">$680</span></div>
+</div>
+<div style="position:absolute;left:0;right:0;bottom:0;height:84px;background:#FAF8F4;border-top:1px solid #E7E2D8;display:flex;justify-content:space-around;align-items:flex-start;padding-top:12px;font-size:11px;font-weight:600;color:#8A867E">
+<span style="display:flex;flex-direction:column;align-items:center;gap:4px;color:#15171C"><span style="width:22px;height:22px;border-radius:7px;background:#15171C"></span>Inicio</span>
+<span style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:22px;height:22px;border-radius:7px;border:2px solid #B9B4AA;box-sizing:border-box"></span>Servicios</span>
+<span style="display:flex;flex-direction:column;align-items:center;gap:4px"><span style="width:22px;height:22px;border-radius:50%;border:2px solid #B9B4AA;box-sizing:border-box"></span>Cuenta</span>
+</div>
+</div></div></div>
+
+<div class="dv-opt" id="1b"><div class="dv-olabel"><a class="dv-oid" href="#1b">1b</a>Describir el problema</div>
+<div style="width:390px;height:844px;border-radius:56px;background:#15171C;padding:10px;box-sizing:border-box;box-shadow:0 30px 60px -20px rgba(21,23,28,.35)">
+<div style="width:100%;height:100%;border-radius:46px;background:#FAF8F4;overflow:hidden;position:relative;display:flex;flex-direction:column">
+<div style="height:54px;flex:none;display:flex;justify-content:space-between;align-items:center;padding:4px 30px 0;font:600 15px system-ui,sans-serif"><span>9:41</span><div style="position:absolute;left:50%;top:11px;transform:translateX(-50%);width:118px;height:34px;border-radius:20px;background:#15171C"></div><span style="width:24px;height:11px;border-radius:3px;border:1.5px solid #15171C;box-sizing:border-box"></span></div>
+<div style="padding:8px 22px 0;display:flex;align-items:center;justify-content:space-between">
+<span style="width:40px;height:40px;border-radius:50%;border:1.5px solid #DCD6CA;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#15171C" stroke-width="2"><path d="M10 3L5 8l5 5"></path></svg></span>
+<span style="font:500 12px 'JetBrains Mono',monospace;color:#8A867E">PASO 1 DE 3</span>
+<span style="width:40px"></span>
+</div>
+<div style="padding:18px 22px 0;display:flex;align-items:center;gap:10px"><span style="padding:6px 12px;border-radius:99px;background:#2F6BFF;color:#fff;font-size:13px;font-weight:600">Hidráulica</span></div>
+<h2 style="margin:12px 22px 0;font-size:30px;line-height:1.02;font-weight:800;letter-spacing:-.03em">¿Qué está pasando?</h2>
+<div style="padding:18px 22px 0;display:flex;flex-wrap:wrap;gap:8px">
+<span style="padding:10px 14px;border-radius:14px;background:#15171C;color:#fff;font-size:14px;font-weight:600">Fuga de agua</span>
+<span style="padding:10px 14px;border-radius:14px;border:1.5px solid #DCD6CA;font-size:14px;font-weight:500">Tubería tapada</span>
+<span style="padding:10px 14px;border-radius:14px;border:1.5px solid #DCD6CA;font-size:14px;font-weight:500">WC</span>
+<span style="padding:10px 14px;border-radius:14px;border:1.5px solid #DCD6CA;font-size:14px;font-weight:500">Calentador</span>
+<span style="padding:10px 14px;border-radius:14px;border:1.5px solid #DCD6CA;font-size:14px;font-weight:500">Tinaco / bomba</span>
+<span style="padding:10px 14px;border-radius:14px;border:1.5px solid #DCD6CA;font-size:14px;font-weight:500">Instalación</span>
+</div>
+<div style="margin:20px 22px 0;padding:14px 16px;border-radius:18px;background:#fff;border:1.5px solid #E7E2D8;min-height:92px;box-sizing:border-box;font-size:15px;line-height:1.4">Gotea la llave de paso debajo del fregadero, ya se mojó el mueble.<span style="display:inline-block;width:2px;height:17px;background:#FF5B23;vertical-align:-3px;margin-left:1px"></span></div>
+<div style="padding:20px 22px 0;font-weight:700;font-size:15px">Fotos <span style="font-weight:400;color:#8A867E">· ayudan a cotizar mejor</span></div>
+<div style="padding:10px 22px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+<div style="aspect-ratio:1;border-radius:16px;background:repeating-linear-gradient(135deg,#E2DDD2 0 8px,#ECE8DF 8px 16px);display:flex;align-items:flex-end;padding:8px;box-sizing:border-box;font:500 10px 'JetBrains Mono',monospace;color:#7D786F">foto_fuga</div>
+<div style="aspect-ratio:1;border-radius:16px;background:repeating-linear-gradient(135deg,#E2DDD2 0 8px,#ECE8DF 8px 16px);display:flex;align-items:flex-end;padding:8px;box-sizing:border-box;font:500 10px 'JetBrains Mono',monospace;color:#7D786F">foto_mueble</div>
+<div style="aspect-ratio:1;border-radius:16px;border:1.5px dashed #C9C3B7;display:flex;align-items:center;justify-content:center;font-size:26px;color:#8A867E">+</div>
+</div>
+<div style="padding:20px 22px 0;font-weight:700;font-size:15px">¿Cuándo?</div>
+<div style="margin:10px 22px 0;padding:4px;border-radius:16px;background:#EFEBE3;display:grid;grid-template-columns:repeat(3,1fr);gap:4px;font-size:14px;font-weight:600;text-align:center">
+<span style="padding:10px 0;border-radius:12px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.08)">Ahora</span><span style="padding:10px 0;color:#6B6862">Hoy</span><span style="padding:10px 0;color:#6B6862">Programar</span>
+</div>
+<div style="position:absolute;left:22px;right:22px;bottom:34px;height:58px;border-radius:20px;background:#15171C;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px">Continuar</div>
+</div></div></div>
+
+<div class="dv-opt" id="1c"><div class="dv-olabel"><a class="dv-oid" href="#1c">1c</a>Tu oferta — subasta (interactiva)</div>
+<div style="width:390px;height:844px;border-radius:56px;background:#15171C;padding:10px;box-sizing:border-box;box-shadow:0 30px 60px -20px rgba(21,23,28,.35)">
+<div style="width:100%;height:100%;border-radius:46px;background:#15171C;color:#FAF8F4;overflow:hidden;position:relative;display:flex;flex-direction:column">
+<div style="height:54px;flex:none;display:flex;justify-content:space-between;align-items:center;padding:4px 30px 0;font:600 15px system-ui,sans-serif"><span>9:41</span><span style="width:24px;height:11px;border-radius:3px;border:1.5px solid #FAF8F4;box-sizing:border-box"></span></div>
+<div style="padding:8px 22px 0;display:flex;align-items:center;justify-content:space-between">
+<span style="width:40px;height:40px;border-radius:50%;border:1.5px solid #3A3D45;display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#FAF8F4" stroke-width="2"><path d="M10 3L5 8l5 5"></path></svg></span>
+<span style="font:500 12px 'JetBrains Mono',monospace;color:#8A867E">PASO 2 DE 3</span><span style="width:40px"></span>
+</div>
+<h2 style="margin:22px 22px 0;font-size:30px;line-height:1.02;font-weight:800;letter-spacing:-.03em">¿Cuánto quieres ofrecer?</h2>
+<p style="margin:10px 22px 0;font-size:14px;line-height:1.4;color:#A9A59C">Cuota mínima sugerida: <span style="color:#FAF8F4;font-weight:600">$450</span>, basada en 38 reparaciones de fuga similares en tu zona.</p>
+<div style="margin:30px 22px 0;display:flex;align-items:center;justify-content:space-between">
+<button onClick="{{ dec }}" style="width:58px;height:58px;border-radius:50%;border:1.5px solid #3A3D45;background:transparent;color:#FAF8F4;font-size:28px;cursor:pointer;font-family:inherit" style-hover="background:#24272E">−</button>
+<div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+<span style="font:700 60px/1 'JetBrains Mono',monospace;letter-spacing:-.04em">{{ offerFmt }}</span>
+<span style="font:500 12px 'JetBrains Mono',monospace;color:{{ deltaColor }}">{{ deltaText }}</span>
+</div>
+<button onClick="{{ inc }}" style="width:58px;height:58px;border-radius:50%;border:none;background:#FF5B23;color:#fff;font-size:28px;cursor:pointer;font-family:inherit" style-hover="background:#FF7340">+</button>
+</div>
+<div style="margin:34px 22px 0;position:relative;height:44px">
+<div style="position:absolute;left:0;right:0;top:12px;height:6px;border-radius:3px;background:linear-gradient(90deg,#3A3D45 0%,#3A3D45 25%,#FF5B23 25%,#F5B700 100%)"></div>
+<div style="position:absolute;top:2px;left:{{ thumbLeft }};transform:translateX(-50%);width:26px;height:26px;border-radius:50%;background:#FAF8F4;box-shadow:0 0 0 6px rgba(255,91,35,.3);transition:left .2s"></div>
+<div style="position:absolute;left:25%;top:30px;transform:translateX(-50%);font:500 10px 'JetBrains Mono',monospace;color:#8A867E">MÍN $450</div>
+<div style="position:absolute;left:0;top:30px;font:500 10px 'JetBrains Mono',monospace;color:#5A5D64">$300</div>
+<div style="position:absolute;right:0;top:30px;font:500 10px 'JetBrains Mono',monospace;color:#5A5D64">$900</div>
+</div>
+<div style="margin:24px 22px 0;padding:18px;border-radius:22px;background:#22252C">
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-size:14px;color:#A9A59C">Probabilidad de que acepten</span><span style="font-weight:700;font-size:18px;color:{{ probColor }}">{{ probLabel }}</span></div>
+<div style="margin-top:12px;height:8px;border-radius:4px;background:#3A3D45;overflow:hidden"><div style="height:100%;width:{{ probWidth }};background:{{ probColor }};border-radius:4px;transition:width .25s,background .25s"></div></div>
+<div style="margin-top:12px;font-size:13px;line-height:1.4;color:#A9A59C">{{ probHint }}</div>
+</div>
+<div style="margin:12px 22px 0;display:flex;gap:10px;font-size:13px;color:#A9A59C;align-items:center"><span style="width:8px;height:8px;border-radius:50%;background:#3DDC84"></span>11 plomeros disponibles a menos de 4 km</div>
+<div style="position:absolute;left:22px;right:22px;bottom:34px;display:flex;flex-direction:column;gap:10px">
+<div style="font-size:12px;color:#8A867E;text-align:center">Solo pagas al terminar. La materia prima se cotiza aparte.</div>
+<div style="height:58px;border-radius:20px;background:#FF5B23;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px">Publicar por {{ offerFmt }}</div>
+</div>
+</div></div></div>
+
+<div class="dv-opt" id="1d"><div class="dv-olabel"><a class="dv-oid" href="#1d">1d</a>Ofertas de contratistas</div>
+<div style="width:390px;height:844px;border-radius:56px;background:#15171C;padding:10px;box-sizing:border-box;box-shadow:0 30px 60px -20px rgba(21,23,28,.35)">
+<div style="width:100%;height:100%;border-radius:46px;background:#FAF8F4;overflow:hidden;position:relative;display:flex;flex-direction:column">
+<div style="height:54px;flex:none;display:flex;justify-content:space-between;align-items:center;padding:4px 30px 0;font:600 15px system-ui,sans-serif"><span>9:41</span><div style="position:absolute;left:50%;top:11px;transform:translateX(-50%);width:118px;height:34px;border-radius:20px;background:#15171C"></div><span style="width:24px;height:11px;border-radius:3px;border:1.5px solid #15171C;box-sizing:border-box"></span></div>
+<div style="padding:8px 22px 0;display:flex;align-items:center;justify-content:space-between">
+<span style="font:500 12px 'JetBrains Mono',monospace;color:#8A867E">PASO 3 DE 3</span>
+<span style="padding:6px 11px;border-radius:99px;background:#FFE6DC;color:#D9420F;font:700 12px 'JetBrains Mono',monospace;display:flex;gap:6px;align-items:center"><span style="width:6px;height:6px;border-radius:50%;background:#FF5B23"></span>CIERRA EN 03:42</span>
+</div>
+<h2 style="margin:16px 22px 0;font-size:30px;line-height:1.02;font-weight:800;letter-spacing:-.03em">3 ofertas para tu fuga</h2>
+<div style="margin:14px 22px 0;padding:12px 14px;border-radius:16px;background:#EFEBE3;display:flex;justify-content:space-between;align-items:center;font-size:14px"><span style="color:#6B6862">Tu oferta</span><span style="display:flex;gap:10px;align-items:center"><span style="font:700 16px 'JetBrains Mono',monospace">$500</span><span style="font-weight:600;color:#FF5B23">Editar</span></span></div>
+<div style="padding:14px 16px 0;display:flex;flex-direction:column;gap:10px">
+
+<div style="padding:16px;border-radius:24px;background:#fff;border:2px solid #15171C;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;gap:12px;align-items:center">
+<div style="width:48px;height:48px;border-radius:16px;background:repeating-linear-gradient(135deg,#E2DDD2 0 6px,#ECE8DF 6px 12px)"></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-weight:700;font-size:16px">Jorge Luna</span><span style="font-size:12px;color:#6B6862">★ 4.9 · 212 servicios · 1.8 km</span></div>
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px"><span style="font:700 20px 'JetBrains Mono',monospace">$500</span><span style="font-size:11px;font-weight:600;color:#1E9E5A">ACEPTA TU PRECIO</span></div>
+</div>
+<div style="display:flex;gap:8px"><span style="flex:1;padding:12px 0;border-radius:14px;background:#15171C;color:#fff;text-align:center;font-weight:700;font-size:15px">Aceptar · llega en 12 min</span></div>
+</div>
+
+<div style="padding:16px;border-radius:24px;background:#fff;border:1.5px solid #E7E2D8;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;gap:12px;align-items:center">
+<div style="width:48px;height:48px;border-radius:16px;background:repeating-linear-gradient(135deg,#E2DDD2 0 6px,#ECE8DF 6px 12px)"></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-weight:700;font-size:16px">Plomería Ramírez</span><span style="font-size:12px;color:#6B6862">★ 4.8 · 530 servicios · 3.1 km</span></div>
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px"><span style="font:700 20px 'JetBrains Mono',monospace">$580</span><span style="font-size:11px;font-weight:600;color:#D9420F">CONTRAOFERTA +$80</span></div>
+</div>
+<div style="font-size:13px;color:#6B6862;line-height:1.35">“Incluyo cambio de llave de paso si hace falta.”</div>
+<div style="display:flex;gap:8px"><span style="flex:1;padding:12px 0;border-radius:14px;border:1.5px solid #DCD6CA;text-align:center;font-weight:600;font-size:14px">Rechazar</span><span style="flex:1;padding:12px 0;border-radius:14px;background:#EFEBE3;text-align:center;font-weight:700;font-size:14px">Aceptar · 20 min</span></div>
+</div>
+
+<div style="padding:16px;border-radius:24px;background:#fff;border:1.5px solid #E7E2D8;display:flex;gap:12px;align-items:center;opacity:.75">
+<div style="width:48px;height:48px;border-radius:16px;background:repeating-linear-gradient(135deg,#E2DDD2 0 6px,#ECE8DF 6px 12px)"></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-weight:700;font-size:16px">Hugo Téllez</span><span style="font-size:12px;color:#6B6862">★ 4.6 · 48 servicios · 2.4 km</span></div>
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:2px"><span style="font:700 20px 'JetBrains Mono',monospace">$650</span><span style="font-size:11px;font-weight:600;color:#D9420F">+$150 · 35 min</span></div>
+</div>
+</div>
+<div style="margin:14px 22px 0;display:flex;align-items:center;gap:10px;font-size:13px;color:#8A867E"><span style="display:flex;gap:3px"><span style="width:6px;height:6px;border-radius:50%;background:#C9C3B7"></span><span style="width:6px;height:6px;border-radius:50%;background:#C9C3B7"></span><span style="width:6px;height:6px;border-radius:50%;background:#C9C3B7"></span></span>Esperando más ofertas…</div>
+</div></div></div>
+
+<div class="dv-opt" id="1e"><div class="dv-olabel"><a class="dv-oid" href="#1e">1e</a>Rastreo — contratista en camino</div>
+<div style="width:390px;height:844px;border-radius:56px;background:#15171C;padding:10px;box-sizing:border-box;box-shadow:0 30px 60px -20px rgba(21,23,28,.35)">
+<div style="width:100%;height:100%;border-radius:46px;background:#E8E3D7;overflow:hidden;position:relative">
+<div style="position:absolute;inset:0;background-image:linear-gradient(#F6F3EC 0 0),linear-gradient(#F6F3EC 0 0),linear-gradient(#F6F3EC 0 0),linear-gradient(#F6F3EC 0 0),linear-gradient(#F6F3EC 0 0);background-size:100% 14px,100% 10px,18px 100%,12px 100%,12px 100%;background-position:0 160px,0 330px,70px 0,210px 0,310px 0;background-repeat:no-repeat"></div>
+<div style="position:absolute;left:96px;top:186px;width:100px;height:132px;border-radius:10px;background:#D4E2C6"></div>
+<div style="position:absolute;left:236px;top:30px;width:62px;height:118px;border-radius:10px;background:#DCD6C8"></div>
+<svg style="position:absolute;inset:0" width="370" height="824" viewBox="0 0 370 824" fill="none"><path d="M79 92 L79 167 L219 167 L219 335 L300 335" stroke="#FF5B23" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path><path d="M79 40 L79 92" stroke="#FF5B23" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 9" opacity=".5"></path></svg>
+<div style="position:absolute;left:61px;top:74px;width:36px;height:36px;border-radius:50%;background:#15171C;border:3px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M12 2l7 19-7-4-7 4 7-19z"></path></svg></div>
+<div style="position:absolute;left:282px;top:312px;display:flex;flex-direction:column;align-items:center"><div style="padding:6px 10px;border-radius:10px;background:#FF5B23;color:#fff;font-size:12px;font-weight:700">Tu casa</div><div style="width:3px;height:10px;background:#FF5B23"></div><div style="width:12px;height:12px;border-radius:50%;background:#FF5B23;border:3px solid #fff"></div></div>
+<div style="position:absolute;top:0;left:0;right:0;height:54px;display:flex;justify-content:space-between;align-items:center;padding:4px 30px 0;font:600 15px system-ui,sans-serif"><span>9:41</span><div style="position:absolute;left:50%;top:11px;transform:translateX(-50%);width:118px;height:34px;border-radius:20px;background:#15171C"></div><span style="width:24px;height:11px;border-radius:3px;border:1.5px solid #15171C;box-sizing:border-box"></span></div>
+<div style="position:absolute;left:0;right:0;bottom:0;background:#FAF8F4;border-radius:32px 32px 0 0;padding:10px 22px 30px;box-shadow:0 -10px 30px rgba(0,0,0,.08);display:flex;flex-direction:column;gap:16px">
+<div style="width:40px;height:5px;border-radius:3px;background:#DCD6CA;align-self:center"></div>
+<div style="display:flex;justify-content:space-between;align-items:flex-end">
+<div style="display:flex;flex-direction:column;gap:4px"><span style="font:500 12px 'JetBrains Mono',monospace;color:#8A867E">LLEGA EN</span><span style="font-size:44px;font-weight:800;letter-spacing:-.04em;line-height:.9">12 min</span></div>
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px"><span style="font:500 12px 'JetBrains Mono',monospace;color:#8A867E">CÓDIGO</span><span style="font:700 22px 'JetBrains Mono',monospace;letter-spacing:.12em">4821</span></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px">
+<div style="height:5px;border-radius:3px;background:#15171C"></div><div style="height:5px;border-radius:3px;background:linear-gradient(90deg,#FF5B23 60%,#E7E2D8 60%)"></div><div style="height:5px;border-radius:3px;background:#E7E2D8"></div><div style="height:5px;border-radius:3px;background:#E7E2D8"></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:11px;font-weight:600;color:#8A867E;margin-top:-10px"><span style="color:#15171C">Aceptado</span><span style="color:#FF5B23">En camino</span><span>Llegó</span><span>Terminado</span></div>
+<div style="display:flex;gap:12px;align-items:center;padding:14px;border-radius:22px;background:#fff;border:1.5px solid #E7E2D8">
+<div style="width:52px;height:52px;border-radius:18px;background:repeating-linear-gradient(135deg,#E2DDD2 0 6px,#ECE8DF 6px 12px)"></div>
+<div style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-weight:700;font-size:16px">Jorge Luna</span><span style="font-size:12px;color:#6B6862">★ 4.9 · Nissan NP300 blanca · MXA-482-B</span></div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+<span style="padding:14px 0;border-radius:16px;background:#15171C;color:#fff;text-align:center;font-weight:700;font-size:15px">Mensaje</span>
+<span style="padding:14px 0;border-radius:16px;border:1.5px solid #DCD6CA;text-align:center;font-weight:600;font-size:15px">Llamar</span>
+</div>
+<div style="display:flex;justify-content:space-between;font-size:13px;color:#6B6862"><span>Precio acordado <b style="color:#15171C;font-family:'JetBrains Mono',monospace">$500</b></span><span>Compartir viaje</span></div>
+</div>
+</div></div></div>
+
+<div class="dv-opt" id="1f"><div class="dv-olabel"><a class="dv-oid" href="#1f">1f</a>Servicio terminado — pago y calificación</div>
+<div style="width:390px;height:844px;border-radius:56px;background:#15171C;padding:10px;box-sizing:border-box;box-shadow:0 30px 60px -20px rgba(21,23,28,.35)">
+<div style="width:100%;height:100%;border-radius:46px;background:#FAF8F4;overflow:hidden;position:relative;display:flex;flex-direction:column">
+<div style="height:54px;flex:none;display:flex;justify-content:space-between;align-items:center;padding:4px 30px 0;font:600 15px system-ui,sans-serif"><span>9:41</span><div style="position:absolute;left:50%;top:11px;transform:translateX(-50%);width:118px;height:34px;border-radius:20px;background:#15171C"></div><span style="width:24px;height:11px;border-radius:3px;border:1.5px solid #15171C;box-sizing:border-box"></span></div>
+<div style="padding:26px 22px 0;display:flex;flex-direction:column;gap:14px">
+<span style="width:56px;height:56px;border-radius:50%;background:#1E9E5A;display:flex;align-items:center;justify-content:center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+<h2 style="margin:0;font-size:34px;line-height:1;font-weight:800;letter-spacing:-.035em;text-wrap:balance">Listo. Tu fuga quedó reparada.</h2>
+<span style="font-size:14px;color:#6B6862">Jorge Luna · 47 min de trabajo</span>
+</div>
+<div style="margin:22px 22px 0;padding:18px;border-radius:22px;background:#fff;border:1.5px solid #E7E2D8;display:flex;flex-direction:column;gap:10px;font-size:15px">
+<div style="display:flex;justify-content:space-between"><span style="color:#6B6862">Mano de obra (subasta)</span><span style="font-family:'JetBrains Mono',monospace;font-weight:500">$500.00</span></div>
+<div style="display:flex;justify-content:space-between"><span style="color:#6B6862">Llave de paso ½″</span><span style="font-family:'JetBrains Mono',monospace;font-weight:500">$145.00</span></div>
+<div style="display:flex;justify-content:space-between"><span style="color:#6B6862">Tarifa de servicio</span><span style="font-family:'JetBrains Mono',monospace;font-weight:500">$35.00</span></div>
+<div style="height:1px;background:#E7E2D8;margin:4px 0"></div>
+<div style="display:flex;justify-content:space-between;align-items:baseline"><span style="font-weight:700">Total</span><span style="font:700 24px 'JetBrains Mono',monospace">$680.00</span></div>
+</div>
+<div style="margin:12px 22px 0;padding:14px 16px;border-radius:18px;background:#EFEBE3;display:flex;justify-content:space-between;align-items:center;font-size:14px"><span style="display:flex;gap:10px;align-items:center"><span style="width:34px;height:22px;border-radius:5px;background:#15171C"></span><span style="font-weight:600">Visa ·· 4417</span></span><span style="color:#FF5B23;font-weight:600">Cambiar</span></div>
+<div style="padding:26px 22px 0;font-weight:700;font-size:17px">¿Cómo te fue con Jorge?</div>
+<div style="padding:12px 22px 0;display:flex;gap:8px">
+<sc-for list="{{ stars }}" as="s" hint-placeholder-count="5"><button onClick="{{ s.onClick }}" style="width:52px;height:52px;border-radius:16px;border:none;background:{{ s.bg }};color:{{ s.fg }};font-size:24px;cursor:pointer">★</button></sc-for>
+</div>
+<div style="padding:14px 22px 0;display:flex;flex-wrap:wrap;gap:8px">
+<span style="padding:8px 12px;border-radius:12px;border:1.5px solid #DCD6CA;font-size:13px;font-weight:500">Puntual</span>
+<span style="padding:8px 12px;border-radius:12px;border:1.5px solid #DCD6CA;font-size:13px;font-weight:500">Limpio</span>
+<span style="padding:8px 12px;border-radius:12px;border:1.5px solid #DCD6CA;font-size:13px;font-weight:500">Explicó el problema</span>
+</div>
+<div style="position:absolute;left:22px;right:22px;bottom:34px;height:58px;border-radius:20px;background:#15171C;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:17px">Pagar $680.00</div>
+</div></div></div>
+
+</div>
+<p class="dv-next">Siguiente: "pantalla de contrapropuesta cuando ningún contratista acepta" · "versión de la app del contratista" · "variantes del control de oferta en <a class="dv-oid" href="#1c">1c</a>"</p>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { offer: 500, rating: 5 };
+  renderVals() {
+    const base = 450, min = 300, max = 900, o = this.state.offer;
+    const d = o - base;
+    const prob = Math.max(8, Math.min(97, Math.round(62 + (d / base) * 160)));
+    const probColor = prob >= 75 ? '#3DDC84' : prob >= 45 ? '#F5B700' : '#FF6B5B';
+    const hint = prob >= 75 ? 'Buena oferta: los contratistas mejor calificados suelen aceptar rápido.'
+      : prob >= 45 ? 'Oferta justa. Puede que recibas contraofertas.'
+      : 'Por debajo del mínimo sugerido: es probable que nadie acepte o recibas contraofertas.';
+    const set = v => this.setState({ offer: Math.max(min, Math.min(max, v)) });
+    return {
+      offerFmt: '$' + o,
+      deltaText: d === 0 ? 'IGUAL AL MÍNIMO' : (d > 0 ? '+$' + d : '−$' + (-d)) + ' VS. MÍNIMO',
+      deltaColor: d < 0 ? '#FF6B5B' : d > 0 ? '#3DDC84' : '#8A867E',
+      thumbLeft: ((o - min) / (max - min) * 100) + '%',
+      probLabel: prob + '%', probWidth: prob + '%', probColor, probHint: hint,
+      dec: () => set(o - 50), inc: () => set(o + 50),
+      stars: [1,2,3,4,5].map(n => ({
+        bg: n <= this.state.rating ? '#F5B700' : '#EFEBE3',
+        fg: n <= this.state.rating ? '#15171C' : '#B9B4AA',
+        onClick: () => this.setState({ rating: n })
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>
